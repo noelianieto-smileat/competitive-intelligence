@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lanzamientos y marcas propias | Smileat Competitive Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
+<style>:root{
+  --azul:#00a2e1; --azul-oscuro:#003f6d; --verde:#92b436; --rosa:#fe2675;
+  --amarillo:#fdcd2b; --morado:#6a1e93; --naranja:#fe8100;
+  --gris:#888888; --gris-oscuro:#545454; --blanco:#ffffff; --fondo:#f4f9fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Montserrat',sans-serif;color:var(--gris-oscuro);background:var(--fondo);line-height:1.65;font-size:16px}
+h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900;color:var(--azul);line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:1.8rem;margin-top:0}
+h3{font-size:1.3rem;color:var(--azul-oscuro)}
+h4{font-size:1.05rem;color:var(--azul-oscuro);margin-top:1.4em}
+a{color:var(--azul)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* Cabecera */
+.hero{background:var(--azul);color:var(--blanco);padding:56px 0 48px}
+.hero h1,.hero h2{color:var(--blanco)}
+.hero .eyebrow{font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--amarillo);margin-bottom:12px}
+.hero p{max-width:720px;font-size:1.05rem;margin:0}
+.hero a.back{color:var(--blanco);text-decoration:none;font-weight:600;font-size:.9rem;display:inline-block;margin-bottom:18px;opacity:.9}
+
+/* Navegación */
+nav.top{background:var(--azul-oscuro);position:sticky;top:0;z-index:10}
+nav.top .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav.top a{color:var(--blanco);text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:20px}
+nav.top a:hover,nav.top a.on{background:var(--azul)}
+
+/* Secciones */
+section.block{padding:44px 0 8px}
+.card{background:var(--blanco);border-radius:16px;padding:28px;margin:0 0 24px;box-shadow:0 2px 10px rgba(0,63,109,.07);border-top:5px solid var(--azul)}
+.card.c-verde{border-top-color:var(--verde)}.card.c-rosa{border-top-color:var(--rosa)}
+.card.c-amarillo{border-top-color:var(--amarillo)}.card.c-morado{border-top-color:var(--morado)}
+.card.c-naranja{border-top-color:var(--naranja)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;background:#e6f5fc;color:var(--azul-oscuro)}
+.chip.mercado{background:var(--azul-oscuro);color:var(--blanco)}
+.chip.tipo{background:#fff5d1}
+.lead{font-size:1.1rem}
+ul{padding-left:1.2em}li{margin-bottom:.35em}
+
+/* Cajas */
+.lectura{background:#eef7e0;border-left:5px solid var(--verde);border-radius:10px;padding:16px 20px;margin:20px 0}
+.lectura strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#5d7a1a;display:block;margin-bottom:6px}
+.trade{background:#fff0e0;border-left:5px solid var(--naranja);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trade strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#b35c00;display:block;margin-bottom:6px}
+.limite{background:#f1e6f7;border-left:5px solid var(--morado);border-radius:10px;padding:16px 20px;margin:20px 0}
+.limite strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:var(--morado);display:block;margin-bottom:6px}
+.fuente{font-size:.82rem;color:var(--gris);margin-top:18px}
+.lectura p,.trade p,.limite p{margin:0 0 .6em}.lectura ul,.trade ul,.limite ul{margin:.3em 0}
+
+/* Temas */
+.temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px}
+.tema{border-radius:14px;padding:18px;color:var(--blanco);font-family:'Nunito',sans-serif;font-weight:900;line-height:1.3}
+.tema span{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:.8rem;margin-top:6px;opacity:.95}
+
+/* Tabla */
+.tabla{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th{background:var(--azul);color:var(--blanco);text-align:left;padding:10px 12px;font-family:'Nunito',sans-serif}
+td{padding:10px 12px;border-bottom:1px solid #e3edf3}
+tr:nth-child(even) td{background:#f7fbfd}
+
+/* Indice de ediciones */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tile{background:var(--blanco);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,63,109,.07);text-decoration:none;color:inherit;display:block;border-top:5px solid var(--azul);transition:transform .15s}
+a.tile:hover{transform:translateY(-3px)}
+.tile.pronto{opacity:.65;border-top-color:var(--gris);border-style:dashed}
+.tile .estado{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--verde)}
+.tile.pronto .estado{color:var(--gris)}
+.tile h3{margin:.4em 0 .4em}
+.tile p{margin:0;font-size:.92rem}
+
+footer{margin-top:40px;background:var(--azul-oscuro);color:var(--blanco);padding:28px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:600px){.card{padding:20px}}
+
+.tile .num{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--azul);line-height:1}
+.tile .count{font-size:.8rem;color:var(--gris);margin-top:10px;font-weight:600}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.vacio{text-align:center;padding:48px 28px}
+.vacio p{max-width:520px;margin:0 auto}
+nav.top a.home{background:rgba(255,255,255,.12)}
+</style></head><body>
+<header class="hero"><div class="wrap"><a class="back" href="index.html">← Smileat Competitive Intelligence</a>
+<div class="eyebrow">Categoría · Producto y distribución</div><h1>Lanzamientos y marcas propias</h1><p>Renovaciones de gama y de packaging, con especial protagonismo de las marcas propias en Reino Unido y el refuerzo del origen en Italia.</p></div></header>
+<nav class="top"><div class="wrap"><a class="home" href="index.html">Inicio</a><a href="lanzamientos.html" class="on">Lanzamientos y marcas propias</a><a href="campanas-eventos.html">Campañas, comunicación y eventos</a><a href="promociones-retail.html">Promociones y precios en retail</a><a href="regulacion-nutricion.html">Regulación, nutrición y seguridad</a><a href="tendencias.html">Tendencias de innovación</a><a href="redes-sociales.html">Publicidad en redes sociales</a><a href="medios.html">Publicidad en medios</a></div></nav>
+<main class="wrap"><section class="block"><article class="card" id="mamia">
+    <h3>Reino Unido: Aldi renueva su gama infantil Mamia</h3>
+    <div class="meta"><span class="chip mercado">Reino Unido</span><span class="chip">Mamia · Aldi</span><span class="chip tipo">Renovación de gama, packaging, reformulación</span><span class="chip">Anuncio: 11 sep 2026</span></div>
+    <p>Aldi anunció la actualización de su gama Mamia, con implantación progresiva en sus tiendas británicas a partir de septiembre. Los principales cambios:</p>
+    <ul>
+      <li>Nuevo packaging con información más clara sobre la edad recomendada.</li>
+      <li>Indicaciones de alimentación más comprensibles para los padres.</li>
+      <li>Actualización de recetas seleccionadas para reducir sal y azúcar cuando corresponda.</li>
+      <li>Ampliación de la gama de snacks para niños a partir de 12 meses.</li>
+      <li>Dos referencias nuevas de Corn Hearts: Apple &amp; Raspberry y Banana &amp; Mango, a 0,85 £ por envase de 30 g.</li>
+    </ul>
+    <p>Los nuevos snacks se incorporan al surtido habitual tras una prueba comercial satisfactoria.</p>
+    <div class="lectura"><strong class="t">Qué significa para Smileat</strong>
+      <p>Mamia usa tres palancas a la vez: claridad nutricional, mejora de producto y precio asequible. Aprovecha el rediseño para reorganizar la información y reforzar la utilidad de la gama. Es una referencia relevante en:</p>
+      <ul><li>Jerarquía de información en el packaging.</li><li>Comunicación por edades y etapas de alimentación.</li><li>Ampliación de la gama de snacks.</li><li>Capacidad de las marcas propias para competir con marcas especializadas.</li></ul>
+    </div>
+    <div class="trade"><strong class="t">Trade Marketing</strong>
+      <p>Comprobar cómo se refleja el nuevo diseño en el lineal y si Aldi ha acompañado la renovación con cartelería o materiales de lanzamiento. El comunicado confirma la implantación en tiendas, pero no acredita una acción específica de PLV.</p></div>
+    <p class="fuente">Fuente: comunicado oficial de Aldi UK (Press Office) sobre Mamia.</p>
+  </article>
+<article class="card c-verde" id="fredflo">
+    <h3>Reino Unido: Tesco prepara el relanzamiento de Fred &amp; Flo</h3>
+    <div class="meta"><span class="chip mercado">Reino Unido</span><span class="chip">Fred &amp; Flo · Tesco</span><span class="chip tipo">Marca propia, renovación e innovación</span><span class="chip">Anuncio: 20 ago · Tiendas: 12 oct 2026</span></div>
+    <p>Tesco reorganiza su oferta infantil bajo Fred &amp; Flo, con cambios en identidad, surtido y presentación. En alimentación infantil:</p>
+    <ul>
+      <li>Seis productos para bebés y niños pequeños renovados.</li>
+      <li>Dos nuevos pouches ecológicos de verduras (guisantes y boniato, 70 g) para introducir sabores desde los seis meses.</li>
+      <li>Dos nuevos yogures previstos para septiembre.</li>
+      <li>Información revisada en los envases para orientar durante la alimentación complementaria.</li>
+      <li>Identidad visual más moderna, con más protagonismo de los personajes Fred y Flo.</li>
+    </ul>
+    <p>Promoción de lanzamiento: cuatro productos por el precio de tres, hasta el 7 de septiembre en tiendas participantes y online.</p>
+    <div class="lectura"><strong class="t">Por qué importa</strong>
+      <p>Refuerza a las marcas propias como competidoras directas de las especializadas. Tesco no solo compite en precio: agrupa las referencias bajo una identidad común, amplía el surtido y mejora la navegación por etapas.</p>
+      <ul><li>Revisar cómo se distinguen las referencias de primeras comidas de las de niños mayores.</li><li>Evaluar la claridad de los mensajes frontales.</li><li>Observar si el diseño crea un bloque de marca más reconocible.</li><li>Vigilar el espacio que puede ganar una marca propia frente a Hero, HiPP o Smileat.</li></ul>
+    </div>
+    <div class="limite"><strong class="t">Situación temporal</strong>
+      <p>El anuncio es anterior a septiembre, pero la implantación prevista en octubre lo hace relevante. No se ha podido confirmar con fotografías fechadas el aspecto del lineal una vez completado el lanzamiento.</p></div>
+    <p class="fuente">Fuente: comunicado oficial de Tesco (tescoplc.com) sobre Fred &amp; Flo.</p>
+  </article>
+<article class="card c-rosa" id="plasmon">
+    <h3>Italia: Plasmon impulsa el relanzamiento de sus leches infantiles</h3>
+    <div class="meta"><span class="chip mercado">Italia</span><span class="chip">Plasmon</span><span class="chip tipo">Ingredientes, trazabilidad y packaging</span><span class="chip">28–30 sep 2026</span></div>
+    <p>Plasmon comunicó un nuevo impulso a su negocio de alimentación infantil, con foco en leches infantiles y de crecimiento. La estrategia incluye:</p>
+    <ul>
+      <li>Reforzar la procedencia italiana de la leche.</li>
+      <li>Dar más visibilidad a la trazabilidad de la cadena de suministro.</li>
+      <li>Poner en valor el protocolo de calidad «Oasi nella Crescita».</li>
+      <li>Evolucionar recetas y formatos.</li>
+      <li>Renovar la identidad visual para que los atributos de la gama sean más reconocibles en el lineal.</li>
+    </ul>
+    <p>La marca destaca también sus capacidades industriales en Italia y la experiencia de su grupo propietario en el sector lácteo.</p>
+    <div class="lectura"><strong class="t">Lectura competitiva</strong>
+      <p>Plasmon convierte la procedencia y el control de la cadena en elementos visibles de diferenciación: tradición italiana, confianza y desarrollo de producto. Para Smileat, la trazabilidad no tiene por qué quedarse en una web o en un sello pequeño: puede formar parte de la jerarquía visual de una gama.</p></div>
+    <div class="trade"><strong class="t">Qué investigar en tienda</strong>
+      <ul><li>Si el nuevo packaging se ha implantado en todo el surtido.</li><li>Si las leches de crecimiento ocupan un bloque específico.</li><li>Si hay comunicación secundaria sobre el origen de la leche.</li><li>Si la renovación se acompaña de cabeceras, stoppers o cartelería.</li></ul></div>
+    <p class="fuente">Fuente: Foodweb — inversión de Plasmon y relanzamiento de las leches infantiles.</p>
+  </article></section></main>
+<footer><div class="wrap"><span>Smileat Competitive Intelligence</span><span>Uso interno · Periodo analizado: 1 sep – 26 oct 2026</span></div></footer>
+</body></html>
