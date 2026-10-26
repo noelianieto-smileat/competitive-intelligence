@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Próximos eventos | Smileat Competitive Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
+<style>:root{
+  --azul:#00a2e1; --azul-oscuro:#003f6d; --verde:#92b436; --rosa:#fe2675;
+  --amarillo:#fdcd2b; --morado:#6a1e93; --naranja:#fe8100;
+  --gris:#888888; --gris-oscuro:#545454; --blanco:#ffffff; --fondo:#f4f9fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Montserrat',sans-serif;color:var(--gris-oscuro);background:var(--fondo);line-height:1.65;font-size:16px}
+h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900;color:var(--azul);line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:1.8rem;margin-top:0}
+h3{font-size:1.3rem;color:var(--azul-oscuro)}
+h4{font-size:1.05rem;color:var(--azul-oscuro);margin-top:1.4em}
+a{color:var(--azul)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* Cabecera */
+.hero{background:var(--azul);color:var(--blanco);padding:56px 0 48px}
+.hero h1,.hero h2{color:var(--blanco)}
+.hero .eyebrow{font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--amarillo);margin-bottom:12px}
+.hero p{max-width:720px;font-size:1.05rem;margin:0}
+.hero a.back{color:var(--blanco);text-decoration:none;font-weight:600;font-size:.9rem;display:inline-block;margin-bottom:18px;opacity:.9}
+
+/* Navegación */
+nav.top{background:var(--azul-oscuro);position:sticky;top:0;z-index:10}
+nav.top .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav.top a{color:var(--blanco);text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:20px}
+nav.top a:hover,nav.top a.on{background:var(--azul)}
+
+/* Secciones */
+section.block{padding:44px 0 8px}
+.card{background:var(--blanco);border-radius:16px;padding:28px;margin:0 0 24px;box-shadow:0 2px 10px rgba(0,63,109,.07);border-top:5px solid var(--azul)}
+.card.c-verde{border-top-color:var(--verde)}.card.c-rosa{border-top-color:var(--rosa)}
+.card.c-amarillo{border-top-color:var(--amarillo)}.card.c-morado{border-top-color:var(--morado)}
+.card.c-naranja{border-top-color:var(--naranja)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;background:#e6f5fc;color:var(--azul-oscuro)}
+.chip.mercado{background:var(--azul-oscuro);color:var(--blanco)}
+.chip.tipo{background:#fff5d1}
+.lead{font-size:1.1rem}
+ul{padding-left:1.2em}li{margin-bottom:.35em}
+
+/* Cajas */
+.lectura{background:#eef7e0;border-left:5px solid var(--verde);border-radius:10px;padding:16px 20px;margin:20px 0}
+.lectura strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#5d7a1a;display:block;margin-bottom:6px}
+.trade{background:#fff0e0;border-left:5px solid var(--naranja);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trade strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#b35c00;display:block;margin-bottom:6px}
+.limite{background:#f1e6f7;border-left:5px solid var(--morado);border-radius:10px;padding:16px 20px;margin:20px 0}
+.limite strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:var(--morado);display:block;margin-bottom:6px}
+.fuente{font-size:.82rem;color:var(--gris);margin-top:18px}
+.lectura p,.trade p,.limite p{margin:0 0 .6em}.lectura ul,.trade ul,.limite ul{margin:.3em 0}
+
+/* Temas */
+.temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px}
+.tema{border-radius:14px;padding:18px;color:var(--blanco);font-family:'Nunito',sans-serif;font-weight:900;line-height:1.3}
+.tema span{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:.8rem;margin-top:6px;opacity:.95}
+
+/* Tabla */
+.tabla{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th{background:var(--azul);color:var(--blanco);text-align:left;padding:10px 12px;font-family:'Nunito',sans-serif}
+td{padding:10px 12px;border-bottom:1px solid #e3edf3}
+tr:nth-child(even) td{background:#f7fbfd}
+
+/* Indice de ediciones */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tile{background:var(--blanco);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,63,109,.07);text-decoration:none;color:inherit;display:block;border-top:5px solid var(--azul);transition:transform .15s}
+a.tile:hover{transform:translateY(-3px)}
+.tile.pronto{opacity:.65;border-top-color:var(--gris);border-style:dashed}
+.tile .estado{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--verde)}
+.tile.pronto .estado{color:var(--gris)}
+.tile h3{margin:.4em 0 .4em}
+.tile p{margin:0;font-size:.92rem}
+
+footer{margin-top:40px;background:var(--azul-oscuro);color:var(--blanco);padding:28px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:600px){.card{padding:20px}}
+
+.tile .num{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--azul);line-height:1}
+.tile .count{font-size:.8rem;color:var(--gris);margin-top:10px;font-weight:600}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.vacio{text-align:center;padding:48px 28px}
+.vacio p{max-width:520px;margin:0 auto}
+nav.top a.home{background:rgba(255,255,255,.12)}
+
+figure.foto{margin:0 0 20px;text-align:center}
+figure.foto img{max-width:100%;height:auto;border-radius:12px;border:1px solid #e3edf3;background:#fff}
+figure.foto.estrecha img{max-width:320px}
+figure.foto figcaption{font-size:.8rem;color:var(--gris);margin-top:8px}
+.visto{background:#e6f5fc;border-left:5px solid var(--azul);border-radius:10px;padding:16px 20px;margin:20px 0}
+.visto strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:var(--azul-oscuro);display:block;margin-bottom:6px}
+.visto ul{margin:.3em 0}.visto p{margin:0 0 .6em}
+.est{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.est.ok{background:#eef7e0;color:#5d7a1a}.est.ctx{background:#fff5d1;color:#8a6a00}.est.no{background:#f1e6f7;color:var(--morado)}
+td a{word-break:break-word}.vacia td{height:38px}
+</style></head><body>
+<header class="hero"><div class="wrap"><a class="back" href="index.html">← Smileat Competitive Intelligence</a>
+<div class="eyebrow">Eventos · España y Europa</div><h1>Próximos eventos</h1><p>Ferias, congresos y encuentros con fecha verificada donde Smileat podría estar presente como marca de alimentación infantil. Consulta realizada el 26 de octubre de 2026.</p></div></header>
+<nav class="top"><div class="wrap"><a class="home" href="index.html">Inicio</a><a href="lanzamientos.html">Lanzamientos y marcas propias</a><a href="campanas-eventos.html">Campañas, comunicación y eventos</a><a href="promociones-retail.html">Promociones y precios en retail</a><a href="regulacion-nutricion.html">Regulación, nutrición y seguridad</a><a href="tendencias.html">Tendencias de innovación</a><a href="lanzamientos-productos.html">Lanzamientos Europa y EE. UU.</a><a href="punto-de-venta.html">Acciones en punto de venta</a><a href="redes-sociales.html">Publicidad en redes sociales</a><a href="medios.html">Publicidad en medios</a></div></nav>
+<main class="wrap"><section class="block">
+<div class="limite"><strong class="t">Cómo leer esta página</strong>
+<ul><li>La relevancia (Alta, Media, Baja) es una valoración mía a partir del tipo de evento y de los canales de Smileat; no sale de las fuentes.</li>
+<li>Solo se listan eventos con fecha confirmada en una fuente. Lo que no pude verificar está aparte, en «Pendientes de fecha».</li>
+<li>Smileat figuró como participante en Mercadinho do Bebé (Oporto, 26 sep 2026), referencia de formato con contacto directo con familias.</li></ul></div>
+<div class="card c-naranja"><h2>Calendario, por fecha</h2>
+<div class="tabla"><table><thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th><th>Tipo</th><th>Relevancia</th><th>Por qué</th><th>Estado de la información</th><th>Fuente</th></tr></thead><tbody><tr><td><strong>7–8 nov 2026</strong></td><td>ExpoNadó Sabadell (Feria del Bebé y la Crianza)</td><td>Fira Sabadell</td><td>Consumidor · bebé y crianza</td><td><span class="est ok">Alta</span></td><td>Contacto directo con familias y sampling, formato similar al de Mercadinho do Bebé.</td><td>Fecha según el listado de la web; el banner de la web contradice el recinto, confirmar con el organizador (info@feriadebebes.es).</td><td><a href="https://www.feriadebebes.es/es_es/">feriadebebes.es</a></td></tr><tr><td><strong>26–29 nov 2026</strong></td><td>BioCultura Madrid</td><td>IFEMA Madrid</td><td>Producto ecológico · perfil de visitante por confirmar</td><td><span class="est ok">Alta</span></td><td>Smileat trabaja con tarritos 100 % ecológicos; sector con alimentación, farmacias y salud.</td><td>Fechas verificadas; confirmar perfil de visitante en biocultura.org/madrid.</td><td><a href="https://www.ntradeshows.com/biocultura-madrid/">nTradeshows</a></td></tr><tr><td><strong>28–29 nov 2026</strong></td><td>Mi Bebé y Yo – The Baby Show</td><td>IFEMA Madrid</td><td>Público general, con conferencias profesionales</td><td><span class="est ok">Alta</span></td><td>Gran feria de bebé en Madrid: ocasión de presencia de marca, prueba de producto y captación de contactos.</td><td>Fechas, recinto y público confirmados.</td><td><a href="https://www.comunidad.madrid/actividades/2026/mi-bebe-yo">Comunidad de Madrid</a></td></tr><tr><td><strong>16–19 feb 2027</strong></td><td>BIOFACH</td><td>Núremberg (Alemania)</td><td>Profesional · alimentación ecológica</td><td><span class="est ctx">Media</span></td><td>Mayor feria internacional de producto ecológico; útil para expansión europea y contactos con distribución.</td><td>Fechas y recinto verificados. La web no menciona alimentación infantil.</td><td><a href="https://biofach.de/en/all-about-the-exhibition/biofach/preview">biofach.de</a></td></tr><tr><td><strong>17–20 feb 2027</strong></td><td>Negenmaandenbeurs</td><td>RAI Ámsterdam (Países Bajos)</td><td>Una fuente indica profesional; por confirmar</td><td><span class="est ctx">Media</span></td><td>Feria de embarazo y bebé en un mercado europeo no cubierto aún por Smileat.</td><td>Fechas y recinto según un listado; confirmar perfil con el organizador.</td><td><a href="https://expoassist.net/event/negenmaandenbeurs-amsterdam-expo">Expoassist</a></td></tr><tr><td><strong>16–18 mar 2027</strong></td><td>Infarma</td><td>Ciudad por confirmar</td><td>Profesional · farmacia</td><td><span class="est ctx">Media</span></td><td>Smileat está presente en farmacias y tiendas especializadas.</td><td>Fecha según listado; no he podido abrir la web oficial y las fuentes difieren en la ciudad.</td><td><a href="https://www.thepharmaletter.com/infarma">The Pharma Letter</a></td></tr><tr><td><strong>18–20 may 2027</strong></td><td>Vitafoods Europe</td><td>Fira Barcelona Gran Via</td><td>Profesional · nutrición y suplementos</td><td><span class="est no">Baja</span></td><td>Foco en ingredientes y suplementos; la web no menciona nutrición infantil.</td><td>Fechas y recinto verificados.</td><td><a href="https://vitafoodsbarcelona.bnetwork.com/Home/AboutTheEvent">Vitafoods</a></td></tr><tr><td><strong>25–26 may 2027</strong></td><td>PLMA World of Private Label</td><td>RAI Ámsterdam</td><td>Profesional · marca de distribuidor</td><td><span class="est no">Baja</span></td><td>Sirve para vigilar la marca propia (Mamia, Fred &amp; Flo); no es escaparate natural de una marca de fabricante.</td><td>Fechas y recinto verificados.</td><td><a href="https://www.plmainternational.com/events/world-private-label-international-trade-show">plmainternational.com</a></td></tr><tr><td><strong>7–9 sep 2027</strong></td><td>Kind + Jugend</td><td>Colonia (Alemania)</td><td>Profesional · equipamiento de bebé y niño</td><td><span class="est no">Baja</span></td><td>Centrada en equipamiento, no en alimentación.</td><td>Fechas y recinto verificados.</td><td><a href="https://www.kindundjugend.com/trade-fair/kind-jugend/dates-opening-hours/">kindundjugend.com</a></td></tr></tbody></table></div></div>
+
+<div class="card c-morado"><h3>Pendientes de fecha</h3>
+<p>No he encontrado fecha publicada o verificable de estos eventos:</p>
+<ul><li><strong>Congreso de la AEP (pediatría):</strong> el 71.º se celebró del 5 al 7 de junio de 2025 en Valencia; las fechas de próximas ediciones no constan en las fuentes abiertas. Consultar aeped.es.</li>
+<li><strong>Congreso AEPap de actualización en pediatría:</strong> la web de IFEMA solo muestra la edición de 2023; consultar congresoaepap.org.</li>
+<li><strong>Organic Food Iberia (Madrid):</strong> la última edición verificada fue el 11–12 de junio de 2025.</li>
+<li><strong>Natexpo 2027:</strong> la edición 2026 fue el 28–29 de septiembre en Lyon; la de 2027 se anuncia en París Expo Porte de Versailles, sin fechas verificadas.</li>
+<li><strong>Mercadinho do Bebé (Portugal):</strong> ediciones en Vilamoura (6 jun 2026) y Oporto (26 sep 2026); no consta la siguiente.</li></ul></div>
+
+<div class="card"><h3>Ya celebrados en 2026 (referencia)</h3>
+<ul><li>ExpoNadó Valencia: 6–7 jun 2026, Feria Valencia.</li>
+<li>ExpoNadó Tarragona: 5–6 sep 2026, Fira Tarragona.</li>
+<li>Natexpo Lyon: 28–29 sep 2026.</li></ul>
+<div class="trade"><strong class="t">Siguiente paso</strong><p>Para ExpoNadó y Mi Bebé y Yo, escribir ya a los organizadores para pedir condiciones de expositor; las dos citas de noviembre están a cuatro semanas.</p></div></div>
+</section></main>
+<footer><div class="wrap"><span>Smileat Competitive Intelligence</span><span>Uso interno</span></div></footer>
+</body></html>

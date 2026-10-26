@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regulación, nutrición y seguridad | Smileat Competitive Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
+<style>:root{
+  --azul:#00a2e1; --azul-oscuro:#003f6d; --verde:#92b436; --rosa:#fe2675;
+  --amarillo:#fdcd2b; --morado:#6a1e93; --naranja:#fe8100;
+  --gris:#888888; --gris-oscuro:#545454; --blanco:#ffffff; --fondo:#f4f9fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Montserrat',sans-serif;color:var(--gris-oscuro);background:var(--fondo);line-height:1.65;font-size:16px}
+h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:900;color:var(--azul);line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:1.8rem;margin-top:0}
+h3{font-size:1.3rem;color:var(--azul-oscuro)}
+h4{font-size:1.05rem;color:var(--azul-oscuro);margin-top:1.4em}
+a{color:var(--azul)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* Cabecera */
+.hero{background:var(--azul);color:var(--blanco);padding:56px 0 48px}
+.hero h1,.hero h2{color:var(--blanco)}
+.hero .eyebrow{font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--amarillo);margin-bottom:12px}
+.hero p{max-width:720px;font-size:1.05rem;margin:0}
+.hero a.back{color:var(--blanco);text-decoration:none;font-weight:600;font-size:.9rem;display:inline-block;margin-bottom:18px;opacity:.9}
+
+/* Navegación */
+nav.top{background:var(--azul-oscuro);position:sticky;top:0;z-index:10}
+nav.top .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav.top a{color:var(--blanco);text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:20px}
+nav.top a:hover,nav.top a.on{background:var(--azul)}
+
+/* Secciones */
+section.block{padding:44px 0 8px}
+.card{background:var(--blanco);border-radius:16px;padding:28px;margin:0 0 24px;box-shadow:0 2px 10px rgba(0,63,109,.07);border-top:5px solid var(--azul)}
+.card.c-verde{border-top-color:var(--verde)}.card.c-rosa{border-top-color:var(--rosa)}
+.card.c-amarillo{border-top-color:var(--amarillo)}.card.c-morado{border-top-color:var(--morado)}
+.card.c-naranja{border-top-color:var(--naranja)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;background:#e6f5fc;color:var(--azul-oscuro)}
+.chip.mercado{background:var(--azul-oscuro);color:var(--blanco)}
+.chip.tipo{background:#fff5d1}
+.lead{font-size:1.1rem}
+ul{padding-left:1.2em}li{margin-bottom:.35em}
+
+/* Cajas */
+.lectura{background:#eef7e0;border-left:5px solid var(--verde);border-radius:10px;padding:16px 20px;margin:20px 0}
+.lectura strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#5d7a1a;display:block;margin-bottom:6px}
+.trade{background:#fff0e0;border-left:5px solid var(--naranja);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trade strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:#b35c00;display:block;margin-bottom:6px}
+.limite{background:#f1e6f7;border-left:5px solid var(--morado);border-radius:10px;padding:16px 20px;margin:20px 0}
+.limite strong.t{font-family:'Nunito',sans-serif;font-weight:900;color:var(--morado);display:block;margin-bottom:6px}
+.fuente{font-size:.82rem;color:var(--gris);margin-top:18px}
+.lectura p,.trade p,.limite p{margin:0 0 .6em}.lectura ul,.trade ul,.limite ul{margin:.3em 0}
+
+/* Temas */
+.temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px}
+.tema{border-radius:14px;padding:18px;color:var(--blanco);font-family:'Nunito',sans-serif;font-weight:900;line-height:1.3}
+.tema span{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:.8rem;margin-top:6px;opacity:.95}
+
+/* Tabla */
+.tabla{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th{background:var(--azul);color:var(--blanco);text-align:left;padding:10px 12px;font-family:'Nunito',sans-serif}
+td{padding:10px 12px;border-bottom:1px solid #e3edf3}
+tr:nth-child(even) td{background:#f7fbfd}
+
+/* Indice de ediciones */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tile{background:var(--blanco);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,63,109,.07);text-decoration:none;color:inherit;display:block;border-top:5px solid var(--azul);transition:transform .15s}
+a.tile:hover{transform:translateY(-3px)}
+.tile.pronto{opacity:.65;border-top-color:var(--gris);border-style:dashed}
+.tile .estado{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--verde)}
+.tile.pronto .estado{color:var(--gris)}
+.tile h3{margin:.4em 0 .4em}
+.tile p{margin:0;font-size:.92rem}
+
+footer{margin-top:40px;background:var(--azul-oscuro);color:var(--blanco);padding:28px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:600px){.card{padding:20px}}
+
+.tile .num{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--azul);line-height:1}
+.tile .count{font-size:.8rem;color:var(--gris);margin-top:10px;font-weight:600}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.vacio{text-align:center;padding:48px 28px}
+.vacio p{max-width:520px;margin:0 auto}
+nav.top a.home{background:rgba(255,255,255,.12)}
+</style></head><body>
+<header class="hero"><div class="wrap"><a class="back" href="index.html">← Smileat Competitive Intelligence</a>
+<div class="eyebrow">Categoría · Producto y distribución</div><h1>Regulación, nutrición y seguridad</h1><p>El debate sobre pouches y azúcar en Reino Unido, el plazo de febrero de 2027 y dos casos de seguridad y regulación de fórmulas infantiles.</p></div></header>
+<nav class="top"><div class="wrap"><a class="home" href="index.html">Inicio</a><a href="lanzamientos.html">Lanzamientos y marcas propias</a><a href="campanas-eventos.html">Campañas, comunicación y eventos</a><a href="promociones-retail.html">Promociones y precios en retail</a><a href="regulacion-nutricion.html" class="on">Regulación, nutrición y seguridad</a><a href="tendencias.html">Tendencias de innovación</a><a href="lanzamientos-productos.html">Lanzamientos Europa y EE. UU.</a><a href="punto-de-venta.html">Acciones en punto de venta</a><a href="redes-sociales.html">Publicidad en redes sociales</a><a href="medios.html">Publicidad en medios</a></div></nav>
+<main class="wrap"><section class="block"><article class="card c-morado">
+    <h3>El debate sobre los pouches se intensifica</h3>
+    <div class="meta"><span class="chip mercado">Reino Unido</span><span class="chip tipo">Investigación científica y debate regulatorio</span><span class="chip">23 sep 2026</span></div>
+    <p>Una investigación difundida por Ingredients Network cuestionó de nuevo la clasificación y comercialización de los pouches con boquilla para bebés. Se analizaron 298 productos vendidos en Escocia en octubre–noviembre de 2024, de los que 178 eran pouches con boquilla.</p>
+    <ul>
+      <li>El <strong>49 %</strong> de los pouches contenía líquidos.</li>
+      <li>Solo el <strong>8,5 %</strong> cumplía los criterios de los investigadores para considerarse alimentación complementaria adecuada.</li>
+      <li>Tarritos, bandejas y formatos sin boquilla presentaban con más frecuencia texturas blandas o que requieren masticar.</li>
+    </ul>
+    <div class="limite"><strong class="t">Contexto</strong>
+      <p>El estudio analiza productos comercializados en 2024, no un nuevo muestreo de lanzamientos de septiembre de 2026. La publicación reabre el debate sobre cómo clasificar y promocionar los pouches.</p></div>
+    <div class="lectura"><strong class="t">¿Por qué importa a Smileat?</strong>
+      <p>El pouch es un formato muy relevante, pero su comodidad no elimina las preguntas sobre textura, modo de consumo y etapa de desarrollo. El debate afecta a instrucciones de uso, mensajes de marketing, edad recomendada, papel de la cuchara y diferenciación entre comida, puré y producto líquido.</p>
+      <p><strong>Oportunidad:</strong> reforzar la claridad del uso previsto de cada referencia y evitar mensajes que puedan confundirse con recomendaciones nutricionales o de desarrollo no demostradas.</p></div>
+    <p class="fuente">Fuente: Ingredients Network — investigación sobre pouches infantiles.</p>
+  </article>
+<article class="card c-morado">
+    <h3>La fecha clave: febrero de 2027</h3>
+    <p>En agosto de 2025 el Reino Unido publicó directrices voluntarias para la industria de alimentación y bebidas infantiles comerciales (hasta 36 meses). El plazo de implementación termina a finales de febrero de 2027, con objetivos de reducción de azúcar y sal y medidas de etiquetado y comercialización.</p>
+    <ul>
+      <li>Mejorar la información sobre el uso de los pouches.</li>
+      <li>Incluir instrucciones claras de alimentación, como el uso de cuchara cuando corresponda.</li>
+      <li>Reducir determinados niveles de azúcar y sal.</li>
+      <li>Revisar la comercialización de productos que pueden no ayudar a decidir con información.</li>
+    </ul>
+    <div class="lectura"><strong class="t">Lectura competitiva (interpretación)</strong>
+      <p>Mamia y Fred &amp; Flo revisan gamas y packaging antes de la fecha límite. La categoría se dirige hacia una competencia en la que la claridad del envase y la composición nutricional pueden pesar tanto como el precio o la estética. No todos los cambios responden solo a la normativa, pero el calendario ayuda a entender el foco en reformulación y etiquetado.</p></div>
+    <p class="fuente">Fuente: directrices oficiales del Gobierno británico (GOV.UK).</p>
+  </article>
+<article class="card c-morado">
+    <h3>El debate sobre el azúcar sigue abierto</h3>
+    <p>En agosto de 2026 se publicaron resultados según los cuales parte de los alimentos infantiles de marca analizados en Reino Unido seguía superando los objetivos de azúcar de las directrices (224 productos de nueve marcas: purés, comidas, postres, desayunos y snacks).</p>
+    <div class="limite"><strong class="t">Contexto</strong><p>Publicación anterior al periodo: contexto de mercado, no novedad de septiembre u octubre. Su relevancia otoñal está ligada al plazo de febrero de 2027.</p></div>
+    <div class="lectura"><strong class="t">Para Smileat</strong>
+      <ul><li>Revisar el contenido de azúcares de las referencias.</li><li>Diferenciar azúcares naturales de añadidos.</li><li>Comunicar la composición con precisión.</li><li>Evitar que «natural» o «ecológico» sustituyan a la información nutricional concreta.</li></ul></div>
+    <p class="fuente">Fuente: The Guardian.</p>
+  </article>
+<article class="card c-rosa">
+    <h3>Nara Organics: el brote de botulismo se declara terminado</h3>
+    <div class="meta"><span class="chip mercado">Estados Unidos</span><span class="chip tipo">Seguridad alimentaria</span><span class="chip">Actualización: 27 ago 2026</span></div>
+    <p>La FDA y los CDC comunicaron el cierre de la investigación de un brote de botulismo infantil asociado a la fórmula en polvo de Nara Organics: cuatro casos confirmados, sin nuevos casos desde el 3 de julio. La empresa había retirado voluntariamente todos los lotes afectados en junio.</p>
+    <p>Aunque es anterior al periodo central, sus consecuencias siguen siendo relevantes en septiembre y octubre.</p>
+    <div class="lectura"><strong class="t">Implicaciones</strong>
+      <p>Pone el foco en trazabilidad de materias primas, control de proveedores, vigilancia microbiológica, gestión de alertas y retiradas, y transparencia con las familias. Para Smileat: el origen de los ingredientes y la calidad del proceso pueden reforzar la confianza, siempre que las afirmaciones se respalden con evidencias verificables.</p></div>
+    <p class="fuente">Fuente: FDA — investigación sobre la fórmula de Nara Organics.</p>
+  </article>
+<article class="card c-rosa">
+    <h3>Nestlé India: actuación regulatoria sobre una fórmula infantil</h3>
+    <div class="meta"><span class="chip mercado">India</span><span class="chip tipo">Calidad, etiquetado y regulación</span><span class="chip">18 sep 2026</span></div>
+    <p>La autoridad india de seguridad alimentaria inició actuaciones contra Nestlé tras detectar una muestra de fórmula de continuación que, tras un nuevo análisis, no cumplía los requisitos de vitamina B7 (biotina). También inició procedimientos sobre alegaciones de etiquetado de NAN Excella Pro Stage 1 y Lactogen Pro 1.</p>
+    <div class="limite"><strong class="t">Matiz importante</strong>
+      <p>No se anunció una retirada general. Nestlé sostuvo que sus productos cumplían los requisitos y defendió sus declaraciones de etiquetado.</p></div>
+    <p>No es de un mercado prioritario de Smileat ni una acción de marketing, pero ilustra el escrutinio creciente sobre alegaciones nutricionales y composición.</p>
+    <p class="fuente">Fuente: Reuters.</p>
+  </article></section></main>
+<footer><div class="wrap"><span>Smileat Competitive Intelligence</span><span>Uso interno · Periodo analizado: 1 sep – 26 oct 2026</span></div></footer>
+</body></html>
