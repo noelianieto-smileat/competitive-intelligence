@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estilo C · Corporativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003f6d;--blue:#00a2e1;--ink:#545454;--mute:#8d99a5;--line:#e4eaf0;--bg:#f6f8fa;--yel:#fdcd2b}
+*{box-sizing:border-box}body{margin:0;font:15px/1.65 Montserrat,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:Nunito,sans-serif;font-weight:900;color:var(--navy);margin:0;line-height:1.15}
+.w{max-width:1120px;margin:0 auto;padding:0 28px}
+.hero{background:linear-gradient(135deg,#003f6d,#00588f);color:#fff;padding:0 0 110px}
+.nav{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid rgba(255,255,255,.15)}
+.nav b{font:900 18px Nunito;letter-spacing:.02em}.nav nav{display:flex;gap:28px;font-size:13px;font-weight:500;color:#cfe3f3}.nav nav a:hover,.nav nav a.on{color:#fff}
+.hero .in{padding-top:64px;max-width:760px}.hero .k{font:600 11px Montserrat;letter-spacing:.16em;text-transform:uppercase;color:var(--yel)}
+.hero h1{color:#fff;font-size:46px;margin:14px 0 16px}.hero p{color:#cfe3f3;margin:0;font-size:16px}
+.pull{margin-top:-62px}.tabs{display:flex;gap:6px;background:#fff;border-radius:12px;padding:8px;box-shadow:0 8px 28px rgba(0,63,109,.12);overflow:auto}
+.tabs a{padding:11px 18px;border-radius:8px;font-weight:600;font-size:13px;white-space:nowrap;color:var(--ink)}.tabs a.on{background:var(--navy);color:#fff}.tabs a:hover:not(.on){background:var(--bg)}
+.sec{padding:48px 0 0}.sec>h2{font-size:24px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:baseline}.sec>h2 a{font:600 12.5px Montserrat;color:var(--blue)}
+.feat{display:grid;grid-template-columns:1.2fr 1fr;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,63,109,.06)}
+.img{background:#e9eff5;display:grid;place-items:center;color:var(--mute);font-size:13px;min-height:200px}
+.feat .tx{padding:32px}.feat h2{font-size:26px;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,63,109,.06);transition:transform .15s}.card:hover{transform:translateY(-3px)}
+.card .img{aspect-ratio:16/10}.card .tx{padding:18px 20px 22px}.card h3{font-size:17px;margin:8px 0 6px}.card p{margin:0;font-size:13.5px;color:var(--mute)}
+.tag{font:600 11px Montserrat;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}.meta{font-size:12px;color:var(--mute);margin-top:10px}
+.ev{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ev div{background:#fff;border-radius:12px;padding:18px 20px;border-top:3px solid var(--blue)}.ev b{display:block;font:900 24px Nunito;color:var(--navy)}.ev span{font-size:13px}
+.ev small{display:block;color:var(--mute);margin-top:4px}
+.lbl{text-align:center;font:600 11px Montserrat;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:44px 0 0}
+.art{background:#fff;border-radius:12px;padding:40px 48px;margin-top:20px;max-width:820px;margin-left:auto;margin-right:auto;box-shadow:0 2px 10px rgba(0,63,109,.06)}
+.art h1{font-size:34px;margin:10px 0 14px}.art .meta2{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.pill{font-size:12px;font-weight:600;background:var(--bg);padding:4px 12px;border-radius:20px;color:var(--navy)}
+.art .img{height:240px;border-radius:8px;margin:18px 0}.box{background:var(--bg);border-left:4px solid var(--blue);border-radius:6px;padding:14px 18px;margin:18px 0}.box b{color:var(--navy)}
+footer{margin-top:56px;background:var(--navy);color:#9fbad0;padding:28px 0;font-size:12.5px}
+@media(max-width:860px){.feat,.grid,.ev{grid-template-columns:1fr}.nav nav{display:none}.hero h1{font-size:32px}.art{padding:26px}}
+</style></head><body>
+<header class="hero"><div class="w"><div class="nav"><b>SMILEAT · Competitive Intelligence</b><nav><a class="on" href="#">Inicio</a><a href="#">Novedades</a><a href="#">Punto de venta</a><a href="#">Eventos</a><a href="#">Archivo</a></nav></div>
+<div class="in"><div class="k">Edición 00 · Periodo xx – xx</div><h1>Título de la edición en una o dos líneas</h1><p>Texto de ejemplo: subtítulo que resume el contenido del periodo en una frase.</p></div></div></header>
+<div class="w pull"><div class="tabs"><a class="on" href="#">Todo</a><a href="#">Lanzamientos</a><a href="#">Campañas</a><a href="#">Promociones</a><a href="#">Regulación</a><a href="#">Tendencias</a><a href="#">Redes sociales</a><a href="#">Medios</a></div></div>
+<main class="w">
+<section class="sec"><div class="feat"><div class="img">Imagen destacada</div><div class="tx"><span class="tag">Categoría</span><h2>Titular de la noticia principal del periodo</h2><p>Texto de ejemplo con el resumen de la noticia destacada, en dos o tres líneas.</p><div class="meta">Marca · Mercado · dd mmm 2026</div></div></div></section>
+<section class="sec"><h2>Últimas novedades <a href="#">Ver todas →</a></h2><div class="grid">
+<a class="card" href="#"><div class="img">Imagen</div><div class="tx"><span class="tag">Categoría</span><h3>Titular de la noticia</h3><p>Resumen breve de una o dos líneas.</p><div class="meta">Marca · Mercado · dd mmm</div></div></a>
+<a class="card" href="#"><div class="img">Imagen</div><div class="tx"><span class="tag">Categoría</span><h3>Titular de la noticia</h3><p>Resumen breve de una o dos líneas.</p><div class="meta">Marca · Mercado · dd mmm</div></div></a>
+<a class="card" href="#"><div class="img">Imagen</div><div class="tx"><span class="tag">Categoría</span><h3>Titular de la noticia</h3><p>Resumen breve de una o dos líneas.</p><div class="meta">Marca · Mercado · dd mmm</div></div></a></div></section>
+<section class="sec"><h2>Próximos eventos <a href="#">Calendario →</a></h2><div class="ev"><div><b>dd mmm</b><span>Nombre del evento</span><small>Ciudad · País</small></div><div><b>dd mmm</b><span>Nombre del evento</span><small>Ciudad · País</small></div><div><b>dd mmm</b><span>Nombre del evento</span><small>Ciudad · País</small></div><div><b>dd mmm</b><span>Nombre del evento</span><small>Ciudad · País</small></div></div></section>
+<div class="lbl">Vista 2 · Ficha de noticia</div>
+<article class="art"><span class="tag">Categoría</span><h1>Titular de la noticia en dos líneas como máximo</h1><div class="meta2"><span class="pill">Marca</span><span class="pill">Mercado</span><span class="pill">dd mmm 2026</span><span class="pill">Confirmado</span></div>
+<p>Entradilla de ejemplo: una o dos frases con el resumen de lo ocurrido.</p><div class="img">Imagen o fotografía</div><p>Texto de ejemplo para los hechos confirmados por la fuente.</p><div class="box"><b>Lectura para Smileat</b><br>Texto de ejemplo con la interpretación.</div><div class="box" style="border-color:#fe8100"><b>Trade Marketing</b><br>Texto de ejemplo con acciones a revisar en tienda.</div><p class="meta">Fuente: nombre de la fuente ↗</p></article>
+</main><footer><div class="w">Smileat Competitive Intelligence · Uso interno</div></footer></body></html>
