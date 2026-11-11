@@ -1,0 +1,8 @@
+// Rellena estos dos valores desde Supabase → Project Settings → API.
+// Pega la clave PÚBLICA: "anon" (empieza por eyJ...) o "publishable" (sb_publishable_...).
+// Es pública por diseño: la seguridad la dan las reglas del esquema SQL.
+// NUNCA pegues aquí la clave "secret" (sb_secret_...) ni la "service_role".
+window.APP_CONFIG = {
+  SUPABASE_URL: "",
+  SUPABASE_ANON_KEY: ""
+};
